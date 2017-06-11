@@ -30,16 +30,16 @@
                             <div class="portfolio-item {{$good['filter']}} col-xs-12 col-sm-4 col-md-3">
                                 <div class="recent-work-wrap">
                                     <img class="img-responsive"
-                                         src="{{asset('public/images/goods/'.$good['filter'].'/'.$good['images'])}}"
-                                         alt="">
+                                         src="{{asset($good['images'])}}"
+                                         alt="{{$good['name']}}">
                                     <div class="overlay">
                                         <div class="recent-work-inner">
                                             <h3><a href="#">{{$good['name']}}</a></h3>
                                             <p>{{$good['description']}}</p>
                                             <a class="preview"
-                                               href="{{asset('public/images/goods/'.$good['filter'].'/'.$good['images'])}}"
+                                               href="{{asset($good['images'])}}"
                                                rel="prettyPhoto"><i
-                                                        class="fa fa-eye"></i> View</a>
+                                                        class="fa fa-eye"></i> Показать</a>
                                         </div>
                                     </div>
                                 </div>

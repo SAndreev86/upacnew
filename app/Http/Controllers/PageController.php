@@ -21,7 +21,7 @@ class PageController extends Controller
         switch ($request->route('alias')) {
             case 'goods':
                 $goods = Goods::get(['name', 'filter', 'description', 'images']);
-                $tags = DB::table('Goods')->distinct()->pluck('filter');
+                $tags = DB::table('goods')->distinct()->pluck('filter');
 
                 return view($request->route('alias'), ['goods' => $goods, 'tags' => $tags]);
             case 'about':

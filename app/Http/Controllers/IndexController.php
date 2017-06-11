@@ -11,7 +11,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Log;
+use App\Goods;
+
 
 class IndexController extends Controller
 {
@@ -24,7 +25,11 @@ class IndexController extends Controller
                 'message' => 'Письмо успешно отправленно'
             ]);
         }
-            return view('site');
+
+        $goods = Goods::orderBy('created_at')->get(['name', 'filter', 'description', 'images'])->take(8);
+
+
+        return view('site', ['goods' => $goods]);
     }
 
 }
